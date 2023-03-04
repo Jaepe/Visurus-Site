@@ -1,0 +1,78 @@
+---
+import { Icon } from "astro-icon";
+import ContentSection from "~/components/content-section.astro";
+import type { FeatureItem } from "~/types";
+
+const features: Array<FeatureItem> = [
+  {
+    title: "Speedy Execution",
+    description:
+      "Execute our hacks in nanoseconds and get hacking in a matter of no time.",
+    icon: "mdi:fast-forward-outline",
+  },
+  {
+    title: "Undetectable",
+    description:
+      "We carefully constructed our code to not be detected by any games anti-cheat.",
+    icon: "mdi:eye",
+  },
+  {
+    title: "Light-Weight",
+    description:
+      "Have a $2,000 desktop or a $400 laptop, our scripts will work fast without any issues.",
+    icon: "mdi:feather",
+  },
+  {
+    title: "Script Search Engine",
+    description:
+      "Can't find a script on youtube or online? No problem, just search with our built in Script Search Engine.",
+    icon: "mdi:search-web",
+  },
+  {
+    title: "Game Detection",
+    description:
+      "Don't feel like searching for a script? No problem! Our hub automaticily detects the game your playing and searches it for you.",
+    icon: "mdi:magnify",
+  },
+  {
+    title: "Exclusive Game Scripts",
+    description:
+      "We have many custom scripts for games that no one has access to. Using Visurus is the only way to get them.",
+    icon: "mdi:lock-open",
+  },
+  {
+    title: "Custom Themes",
+    description:
+      "Don't like the way Visurus looks? No problem, just use another theme or your own!",
+    icon: "mdi:lock-open",
+  },
+  {
+    title: "Community",
+    description:
+      "Behind Visurus is an amazing community of developers that are working around the clock to be able to provide you, fast and clean scripts",
+    icon: "mdi:account-group",
+  },
+];
+---
+
+<ContentSection title="Features" id="features">
+  <Fragment slot="lead">
+    Visurus comes with many <span class="text-primary">premium</span> scripts. It takes
+    the best parts of
+    <span class="text-primary">free</span>
+    hubs and <span class="text-primary">paid</span> hubs, then adds its own <span class="text-primary">innovations</span> and <span class="text-primary">improvements</span>.
+  </Fragment>
+  <ul class="grid max-w-6xl grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+    {
+      features.map(({ title, description, icon }) => (
+        <li class="flex flex-col items-center gap-4 border border-default bg-offset p-6">
+          <div class="h-16 w-16 rounded-full border-2 border-current p-3">
+            <Icon name={icon} />
+          </div>
+          <p class="text-center font-extrabold text-xl">{title}</p>
+          <p class="text-center text-offset text-sm">{description}</p>
+        </li>
+      ))
+    }
+  </ul>
+</ContentSection>

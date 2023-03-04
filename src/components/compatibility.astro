@@ -1,0 +1,64 @@
+---
+import CompatibilityList from "~/components/compatibility-list.astro";
+import ContentSection from "~/components/content-section.astro";
+import type { CompatibilityItem } from "~/types";
+
+const paid: Array<CompatibilityItem> = [
+  {
+    title: "Synapse",
+    icon: "executors/synapse",
+    url: "https://x.synapse.to/",
+  },
+  {
+    title: "Script-Ware",
+    icon: "executors/script-ware",
+    url: "https://script-ware.com/",
+  },
+];
+
+const free: Array<CompatibilityItem> = [
+    {
+        title: "Fluxus",
+        icon: "executors/404",
+        url: "https://fluxteam.net/",
+    },
+    {
+        title: "KRNL",
+        icon: "executors/krnl",
+        url: "https://krnl.place/",
+    },
+    {
+        title: "Oxygen U",
+        icon: "executors/oxygen",
+        url: "https://oxygenu.xyz/",
+    },
+    {
+        title: "Electron",
+        icon: "executors/electron",
+        url: "https://ryos.best/",
+    },
+    {
+        title: "Comet",
+        icon: "executors/404",
+        url: "https://cometrbx.xyz/",
+    },
+];
+---
+
+<ContentSection title="Compatibility" id="compatibility">
+  <Fragment slot="lead">
+    Visurus <span class="text-primary">plays nice</span>. Visurus works on{" "}
+    <span class="text-primary">many</span>
+    executors, we also continue to add <span class="text-primary">more</span> support for other executors.
+  </Fragment>
+  <CompatibilityList
+    items={paid}
+    title="Paid Executors"
+    url="https://docs.astro.build/core-concepts/framework-components/"
+  />
+  <CompatibilityList
+    items={free}
+    title="Free Executors"
+    url="https://docs.astro.build/guides/deploy/"
+  />
+</ContentSection>
